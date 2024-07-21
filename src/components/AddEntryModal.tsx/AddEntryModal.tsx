@@ -21,6 +21,7 @@ export default function AddEntryModal() {
   const dispatch = useAppDispatch();
   const handleClose = () => dispatch(close());
   const [value, setValue] = useState('');
+
   return (
     <Modal
       open={open}
@@ -44,7 +45,8 @@ export default function AddEntryModal() {
             </Grid>
             <Grid item xs={6}>
               <TextField
-                id="add"
+                autoFocus
+                id="addInput"
                 label="Название"
                 placeholder="Зарплата, ипотека, моб. связь"
                 variant="standard"
@@ -53,7 +55,6 @@ export default function AddEntryModal() {
                 onChange={(e) => setValue(e.target.value)}
               />
             </Grid>
-
             <Grid item xs={6}>
               <Button variant="outlined" type="submit">
                 Добавить
