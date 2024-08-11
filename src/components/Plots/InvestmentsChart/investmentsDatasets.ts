@@ -1,7 +1,7 @@
-import { CalculatorT } from '../../../types/calculator';
+import { CalculatorType } from "../../../types/categories";
 
-export default function investmentsDatasets(calculator: CalculatorT) {
-  const { investments, months, annualInvestmentRate } = calculator;
+export default function investmentsDatasets(calculator: CalculatorType) {
+  const { investments, constants } = calculator;
   const newMonthlyInvestments = investments.reduce(
     (acc, entry) => acc + entry.value,
     0,

@@ -4,45 +4,7 @@ import {
   EntryType,
   FinTimeEnum,
 } from '../types/categories';
-
-const initConstants: EntryType[] = [
-  {
-    id: 'months',
-    name: 'months',
-    text: 'Месяцы наращивания капитала',
-    periodicity: FinTimeEnum.monthly,
-    value: 240,
-    editable: true,
-    removable: false,
-  },
-  {
-    id: 'inflationCoefficient',
-    name: 'inflationCoefficient',
-    text: 'Инфляция',
-    periodicity: FinTimeEnum.annual,
-    value: 0.1,
-    editable: true,
-    removable: false,
-  },
-  {
-    id: 'investmentsGrowthCoefficient',
-    name: 'investmentsGrowthCoefficient',
-    text: 'Рост инвестиций',
-    periodicity: FinTimeEnum.annual,
-    value: 0.15,
-    editable: true,
-    removable: false,
-  },
-  {
-    id: 'retirementMonths',
-    name: 'retirementMonths',
-    text: 'Месяцы траты капитала',
-    periodicity: FinTimeEnum.monthly,
-    value: 240,
-    editable: true,
-    removable: false,
-  },
-];
+import { initConstants } from './initConstants';
 
 const initIncome: EntryType[] = [
   {
@@ -133,5 +95,7 @@ export const initCalculator: CalculatorType = {
   fixedExpenses: initFixedExpenses,
   savings: initSavings,
   investments: initInvestments,
-  constants: initConstants,
+  constants: initConstants as unknown as EntryType[],
 };
+
+export const MAX_MONTHS = 480;
