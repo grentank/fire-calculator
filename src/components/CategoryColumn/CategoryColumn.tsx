@@ -1,31 +1,47 @@
 import React from 'react';
-import { useAppSelector } from '../../providers/rtk/hooks';
-import { Grid, Typography } from '@mui/material';
+import { CategoryT } from '../../types/calculator';
+import { Grid, IconButton, Typography } from '@mui/material';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import Entry from '../Entry/Entry';
-import NewEntry from '../NewEntry/NewEntry';
-import { CATEGORIES_WITH_LABELS, CategoryT } from '../../utils/types/calculator';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
+import { openModal } from '../../redux/slices/modal';
 
 type CategoryColumnProps = {
   category: CategoryT;
+  text: string;
 };
 
-export default function CategoryColumn({ category }: CategoryColumnProps) {
-  const items = useAppSelector((store) => store.calculator[category]);
-  const targetCategory = CATEGORIES_WITH_LABELS.find((cat) => cat.key === category);
-  if (!targetCategory) throw new Error(`Category ${category} not found`);
-
+export default function CategoryColumn({
+  category,
+  text,
+}: CategoryColumnProps) {
+  const entries = useAppSelector(
+    (store) => store.calculator[category],
+  );
+  const dispatch = useAppDispatch();
   return (
     <Grid container>
-      <Grid key={`label ${category}`} item xs={12}>
-        <Typography variant="h5">{targetCategory.simpleText}</Typography>
+      <Grid key={`category ${category}`} item xs={12}>
+        <Typography variant="h5">{text}</Typography>
       </Grid>
-      {items.map((item) => (
-        <Grid key={item.id} item xs={12}>
-          <Entry entry={item} />
+      {entries.map((entry) => (
+        <Grid
+          sx={{ marginBottom: '10px', marginTop: '5px' }}
+          item
+          xs={12}
+          key={entry.id}
+        >
+          <Entry entry={entry} />
         </Grid>
       ))}
-      <Grid key={`new ${category}`} item xs={12}>
-        <NewEntry text={targetCategory.label} category={category} />
+      <Grid key={`add ${category}`} item xs={12}>
+        <IconButton
+          aria-label="toggle password visibility"
+          onClick={() => dispatch(openModal(category))}
+          edge="end"
+        >
+          <AddCircleIcon />
+        </IconButton>
       </Grid>
     </Grid>
   );

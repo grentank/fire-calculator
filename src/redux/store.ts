@@ -1,15 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import calculatorReducer from './slices/calculator';
-import modalReducer from './slices/modal';
+// import modalSlice from './slices/modal';
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
     calculator: calculatorReducer,
-    modal: modalReducer,
+    // modal: modalSlice,
   },
 });
-
-export default store;
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<typeof store.getState>;

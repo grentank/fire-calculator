@@ -1,6 +1,6 @@
 {
   "experimentalTernaries": false,
-  "printWidth": 100,
+  "printWidth": 70,
   "tabWidth": 2,
   "useTabs": false,
   "semi": true,
@@ -9,7 +9,7 @@
   "jsxSingleQuote": false,
   "trailingComma": "all",
   "bracketSpacing": true,
-  "bracketSameLine":false,
+  "bracketSameLine": false,
   "arrowParens": "always",
   "proseWrap": "always",
   "endOfLine": "lf",
