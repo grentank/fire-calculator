@@ -81,6 +81,15 @@ const initSavings: EntryType[] = [
 const initInvestments: EntryType[] = [
   {
     id: uuidv4(),
+    name: 'Tekucii portfel',
+    text: 'Текущий портфель',
+    periodicity: FinTimeEnum.never,
+    value: 300000,
+    editable: true,
+    removable: false,
+  },
+  {
+    id: uuidv4(),
     name: 'Indexi',
     text: 'Индексы',
     periodicity: FinTimeEnum.monthly,
