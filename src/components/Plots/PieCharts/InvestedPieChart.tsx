@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from 'react';
-import { Chart } from 'chart.js/auto';
+import Chart from 'chart.js/auto';
 import { ChartProps } from '../types/chart';
 
-export default function GrowthChart({
+export default function InvestedPieChart({
   labels,
   datasets,
-  title
+  title,
 }: ChartProps) {
   const canvasRef = useRef<null | HTMLCanvasElement>(null);
 
@@ -13,7 +13,7 @@ export default function GrowthChart({
     if (!canvasRef.current) return;
     const ctx = canvasRef.current;
     const chart = new Chart(ctx, {
-      type: 'line',
+      type: 'pie',
       options: {
         plugins: {
           title: {
@@ -27,11 +27,16 @@ export default function GrowthChart({
         },
       },
       data: {
-        labels,
-        datasets,
+        labels: labels,
+        datasets: [
+          {
+            label: 'Датасет',
+            data: datasets,
+          },
+        ],
       },
     });
     return () => chart.destroy();
   }, [labels, datasets]);
-  return <canvas ref={canvasRef} id="growth-chart"></canvas>;
+  return <canvas ref={canvasRef} id="investments-pie-chart"></canvas>;
 }

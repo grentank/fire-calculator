@@ -14,6 +14,12 @@ export default function InvestmentsChart({
     const chart = new Chart(ctx, {
       type: 'bar',
       options: {
+        plugins: {
+          title: {
+            display: true,
+            text: 'Капитал',
+          },
+        },
         responsive: true,
         scales: {
           x: {
@@ -22,6 +28,9 @@ export default function InvestmentsChart({
           y: {
             stacked: true,
           },
+        },
+        animation: {
+          duration: 0,
         },
       },
       data: {

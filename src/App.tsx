@@ -5,20 +5,20 @@ import CategoryList from './components/Category/CategorySelect/CategorySelect';
 
 function App() {
   return (
-    <Container>
-      <Grid container>
-        <Grid item xs={3}>
-          <CategoryList />
-        </Grid>
-        <Grid item xs={9}>
-          <Grid container spacing={2}>
-            <Grid item xs={12}>
-              <PlotsWrapper />
-            </Grid>
+    // <Container>
+    <Grid container>
+      <Grid item xs={2}>
+        <CategoryList />
+      </Grid>
+      <Grid item xs={10}>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <PlotsWrapper />
           </Grid>
         </Grid>
       </Grid>
-    </Container>
+    </Grid>
+    // </Container>
   );
 }
 

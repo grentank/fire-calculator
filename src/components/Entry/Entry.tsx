@@ -22,6 +22,7 @@ export default function Entry({ entry }: EntryProps) {
       name={entry.name}
       onChange={(e) => {
         const newValue = Number(e.target.value);
+        console.log({ newValue, val: e.target.value });
         if (Number.isNaN(newValue)) return;
         dispatch(changeEntryValue({ ...entry, value: newValue }));
       }}
