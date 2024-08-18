@@ -23,7 +23,7 @@ export function extractConstants(
     if (constObj.name !== constName)
       throw new Error(`Wrong constant name: ${constName}`);
   }
-  return constants.slice(0, 5).reduce(
+  return constants.slice(0, 7).reduce(
     (acc, constObj) => ({
       ...acc,
       [constObj.name]: constObj.value,

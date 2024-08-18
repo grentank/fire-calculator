@@ -10,20 +10,6 @@ import {
   FinTimeEnum,
 } from '../../types/categories';
 
-// const initialState: CalculatorT = {
-//   income: [],
-//   fixedExpenses: [],
-//   inflatingExpenses: [],
-//   investments: [],
-//   savings: [],
-//   remaining: {
-//     id: "remaining",
-//     name: "Remaining",
-//     value: 0,
-//     type: "Остаток",
-//   },
-// };
-
 export const calculatorSlice = createSlice({
   name: 'calculator',
   initialState: initCalculator,
@@ -57,7 +43,6 @@ export const calculatorSlice = createSlice({
           break;
         }
       }
-      // state.remaining.value = calculateRemaining(state);
     },
     changeEntryValue: (state, action: PayloadAction<EntryType>) => {
       const { id, value } = action.payload;
@@ -71,7 +56,6 @@ export const calculatorSlice = createSlice({
           break;
         }
       }
-      // state.remaining.value = calculateRemaining(state);
     },
   },
 });

@@ -7,7 +7,7 @@ export default function investmentsDatasets(
   const {
     investments: investmentsWithInitialValue,
     constants,
-    savings,
+    // savings,
     income,
     fixedExpenses,
   } = calculator;
@@ -15,7 +15,7 @@ export default function investmentsDatasets(
     investmentsGrowthCoefficient,
     inflationCoefficient,
     months,
-    retirementMonths,
+    // retirementMonths,
     paycheckIncrease,
   } = extractConstants(constants);
 

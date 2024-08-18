@@ -53,6 +53,24 @@ export const initConstants = [
     editable: true,
     removable: false,
   },
+  {
+    id: 'startMonth',
+    name: 'startMonth',
+    text: 'Начальный месяц',
+    periodicity: FinTimeEnum.never,
+    value: 0,
+    editable: true,
+    removable: false,
+  },
+  {
+    id: 'endMonth',
+    name: 'endMonth',
+    text: 'Конечный месяц',
+    periodicity: FinTimeEnum.never,
+    value: 36,
+    editable: true,
+    removable: false,
+  },
 ] as const;
 
 export type ConstantsValuesT = {
