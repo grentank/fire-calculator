@@ -2,7 +2,6 @@ import { Slider } from '@mui/material';
 import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import { changeEntryValue } from '../../redux/slices/calculator';
-import { MAX_MONTHS } from '../../utils/initCalculator';
 
 export default function MonthSlider() {
   const constants = useAppSelector(
@@ -24,7 +23,7 @@ export default function MonthSlider() {
         );
         dispatch(changeEntryValue({ ...endEntry, value: endValue }));
       }}
-      max={MAX_MONTHS / 2}
+      max={constants[0].value}
       marks={[
         { value: start, label: `${start}` },
         { value: end, label: `${end}` },

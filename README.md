@@ -1,30 +1,29 @@
-# React + TypeScript + Vite
+# Invsetments calculator - Калькулятор инвестиций
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Открыть калькулятор на Github pages](https://grentank.github.io/fire-calculator/)
 
-Currently, two official plugins are available:
+Финансовый калькулятор для калькуляции инвестиций.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Как пользоваться
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. Нажми на кнопку **_"Редактировать значения"_**
+2. Выбери категорию **_"Доходы"_**
+3. Введи подходящие числа, например, зарплата и подработка. В каждой
+   категории можно добавить или удалить поля новое поле.
+4. Выбери категорию **_"Фиксированные расходы"_** и перечисли все
+   обязательные ежемесячные расходы. Это могут быть платежи по
+   ипотеке, коммунальные счета, продукты, оплата подписок, телефон и
+   интернет, аренда квартиры, платежи по кредитам и т.д. Все расходы
+   суммарно будут подвержены коэффициенту роста инфляции.
+5. Перейди в **_"Сбережения"_** и внеси на что ты хочешь сберегать
+   (обычно это краткосрочная цель от пары месяцев до 5 лет). Например:
+   поездка заграницу, новая стиральная машина, ремонт в квартире.
+6. Перейди в **_"Инвестиции"_** и внеси желаемые суммы, которые
+   собираешься ежемесячно инвестировать. На все инвестиции суммарно
+   будет применяться коэффициент роста инвестиций (с последующей
+   капитализацией процентов).
+7. Перейди в категорию **_"Константы"_** и измени коэффициенты по
+   своему желанию. Используй значения для коэффициентов инфляции и
+   инвестиций согласно своему региону и портфелю.
+8. Используй ползунок сверху страницы, чтобы ограничить графики по
+   месяцам.
